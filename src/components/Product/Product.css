@@ -1,0 +1,20 @@
+.product {
+    display: flex;
+}
+.product img {
+    margin-right: 18px;
+}
+.product h4 {
+    font-weight: 400;
+    color: blue;
+    font-size: 20px;
+}
+.btnAddToCart {
+    width: 150px;
+    height: 30px;
+    color: black;
+    background: goldenrod;
+    border: 1px solid darkgreen;
+    border-radius: 5px;
+    cursor: pointer;
+}
