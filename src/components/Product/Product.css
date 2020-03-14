@@ -1,6 +1,13 @@
 .product {
     display: flex;
+    border-bottom: 1px solid lightgray;
+    padding-bottom: 20px;
 }
+
+.product:last-child {
+    border-bottom: none;
+}
+
 .product img {
     margin-right: 18px;
 }
