@@ -22,6 +22,7 @@ const Review = () => {
         setCart(newCart)
         removeFromDatabaseCart(productKey)
     }
+
     useEffect(() => {
         const saveCart = getDatabaseCart();
         const productkeys = Object.keys(saveCart)
@@ -39,9 +40,6 @@ const Review = () => {
         thankyou = <img src={thanksImg} alt=""/>
     }
   
-
-
-
     return (
         <div className="review-container">
             <div className="review-content">

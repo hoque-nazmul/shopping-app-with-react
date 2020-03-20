@@ -31,4 +31,6 @@
 
 .nav a:hover {
     background-color: gray;
+    color: #fff;
+    text-decoration: none;
 }

@@ -44,7 +44,6 @@ const Shop = () => {
         
         setCart(newCart)
 
-
         const similarProduct = newCart.filter(pd => pd.key === product.key)
         const productCount = similarProduct.length;
 
