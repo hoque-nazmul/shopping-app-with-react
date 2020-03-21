@@ -3,13 +3,13 @@ import './Header.css'
 import logo from '../../images/logo.png'
 import { useAuth } from '../Login/useAuth';
 
-
 const Header = () => {
     const auth = useAuth();
     return (
         <div className="header">
+            <img src={logo} alt=""/>
             <div className="header-content">
-                <img src={logo} alt=""/>
+                
                 <div className="menu">
                     <nav className="nav">
                         <a href="/shop">Shop</a>
@@ -20,7 +20,7 @@ const Header = () => {
                                 auth.user && <span style={{ color: 'yellow' }}>Welcome {auth.user.name}</span> 
                             }
                             {
-                                auth.user ? <a className="btn btn-danger" href="/login">Sign Out</a>  : <a href="/login">Sign in</a>
+                                auth.user ? <a style={{ padding: '5px 12px' }} className="btn btn-danger signout" href="/login">Sign Out</a>  : <a href="/login">Sign in</a>
                             }
                         </span>
                     </nav>

@@ -55,7 +55,7 @@ const Review = () => {
                 }
                 {/* { thankyou } */}
                 {
-                    !cart.length && <h2>Your Cart is Empty ! <a href="/shop">Keep Shopping</a></h2>
+                    !cart.length && <h2 style={{ textAlign: 'center', marginTop: '50px' }}>Your Cart is Empty ! <a href="/shop">Keep Shopping</a></h2>
                 }
             </div>
             <div className="review-cart-container">
