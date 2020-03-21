@@ -4,17 +4,20 @@ import fakeData from '../../fakeData';
 import ReviewProduct from '../ReviewProduct/ReviewProduct';
 import Cart from '../Cart/Cart';
 import './Review.css'
-import thanksImg from '../../images/giphy.gif'
+// import thanksImg from '../../images/giphy.gif'
+import { Link } from 'react-router-dom';
+import { useAuth } from '../Login/useAuth';
 
 const Review = () => {
+    const auth = useAuth();
     const [cart, setCart] = useState([])
-    const [placedOrder, setPlacedOrder] = useState(false)
+    // const [placedOrder, setPlacedOrder] = useState(false)
 
-    const handlePlaceOrder = () => {
-        setCart([])
-        setPlacedOrder(true)
-        processOrder()
-    }
+    // const handlePlaceOrder = () => {
+    //     setCart([])
+    //     setPlacedOrder(true)
+    //     processOrder()
+    // }
 
 
     const removeBtnHandler = (productKey) => {
@@ -35,10 +38,10 @@ const Review = () => {
         setCart(cartProduct);
     }, [])
 
-    let thankyou;
-    if (placedOrder) {
-        thankyou = <img src={thanksImg} alt=""/>
-    }
+    // let thankyou;
+    // if (placedOrder) {
+    //     thankyou = <img src={thanksImg} alt=""/>
+    // }
   
     return (
         <div className="review-container">
@@ -50,11 +53,21 @@ const Review = () => {
                         product = {product}>
                         </ReviewProduct>)
                 }
-                { thankyou }
+                {/* { thankyou } */}
+                {
+                    !cart.length && <h2>Your Cart is Empty ! <a href="/shop">Keep Shopping</a></h2>
+                }
             </div>
             <div className="review-cart-container">
                 <Cart cart={cart}>
-                    <button onClick={handlePlaceOrder} className="btnAddToCart">Place Order</button>
+                    {/* <button onClick={handlePlaceOrder} className="btnAddToCart">Place Order</button> */}
+                    <Link to="/shipment">
+                        {
+                            auth.user ?  <button className="btnAddToCart">Proceed Checkout</button> :
+                            <button className="btnAddToCart">Login to Proceed</button>
+                        }
+                        
+                    </Link>
                 </Cart>
             </div>
         </div>

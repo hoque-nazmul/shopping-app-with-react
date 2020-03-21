@@ -1,8 +1,8 @@
 import React from 'react';
 import './Cart.css'
 
-
 const Cart = (props) => {
+
     const cart = props.cart;
     // console.log(cart);
     const totaltext = cart.reduce((total, product) => total + product.price * product.quantity, 0) 
@@ -29,6 +29,7 @@ const Cart = (props) => {
             {
                 props.children
             }
+            
         </div>
     );
 };
