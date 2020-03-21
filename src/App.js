@@ -10,6 +10,7 @@ import ProductDetails from './components/ProductDetails/ProductDetails';
 import Login from './components/Login/Login';
 import { AuthContextProvider, PrivateRoute } from './components/Login/useAuth';
 import Shipment from './components/Shipment/Shipment';
+import Footer from './components/Footer/Footer';
 
 function App() {
   return (
@@ -43,9 +44,11 @@ function App() {
               <NotFound></NotFound>
             </Route>
           </Switch>
+          <Footer></Footer>
       </AuthContextProvider>
     </div>
     </Router>
+    
   );
 }
 

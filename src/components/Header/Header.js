@@ -20,7 +20,7 @@ const Header = () => {
                                 auth.user && <span style={{ color: 'yellow' }}>Welcome {auth.user.name}</span> 
                             }
                             {
-                                auth.user ? <a style={{ padding: '5px 12px' }} className="btn btn-danger signout" href="/login">Sign Out</a>  : <a href="/login">Sign in</a>
+                                auth.user ? <a style={{ padding: '5px 12px' }} className="btn btn-danger signout" href="/login">Sign Out</a>  : <a  style={{ padding: '5px 12px' }} className="btn btn-info" href="/login">Sign in</a>
                             }
                         </span>
                     </nav>
