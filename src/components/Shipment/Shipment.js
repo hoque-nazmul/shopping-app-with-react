@@ -2,13 +2,32 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import './Shipment.css'
 import { useAuth } from '../Login/useAuth';
+import { getDatabaseCart, processOrder } from '../../utilities/databaseManager';
 
 const Shipment = () => {
     const auth = useAuth();
-    const { register, handleSubmit, watch, errors } = useForm();
-    const onSubmit = data => { console.log(data) }
 
-    console.log(watch('example')) // watch input value by passing the name of it
+    const { register, handleSubmit, errors } = useForm();
+    const onSubmit = data => { 
+        const savedCart = getDatabaseCart();
+        const email = auth.user.email;
+        const orderDetails = {email: email, cart: savedCart}
+        fetch('http://localhost:4000/orderPlaced', {
+            method: 'POST',
+            body: JSON.stringify(orderDetails),
+            headers: {
+              "Content-type": "application/json; charset=UTF-8"
+            }
+          })
+          .then(res => res.json())
+          .then(data => {
+              console.log("order placed", data);
+              alert("Order Successfully Placed with id: ", data._id)
+              processOrder();
+          }) 
+     }
+
+    
 
     return (
         <div className="ship-form-wrapper">
