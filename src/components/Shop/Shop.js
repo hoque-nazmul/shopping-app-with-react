@@ -24,8 +24,8 @@ const Shop = () => {
                 const getProduct = products.find(pd => pd.key === key)
                 getProduct.quantity = saveCart[key]
                 return getProduct;
+                
             })
-
             setCart(cartProduct)
         }
         
