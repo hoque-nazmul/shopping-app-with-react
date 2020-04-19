@@ -8,7 +8,7 @@ const ProductDetails = () => {
     const {productKey} = useParams();
     const [product, setProduct] = useState(null);
     useEffect(() => {
-        fetch('http://localhost:4000/product/'+productKey)
+        fetch('https://shrouded-garden-81115.herokuapp.com/product/'+productKey)
         .then(res => res.json())
         .then(data => {
             setProduct(data)

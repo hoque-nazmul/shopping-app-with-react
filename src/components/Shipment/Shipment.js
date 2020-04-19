@@ -24,7 +24,7 @@ const Shipment = () => {
         const shippment = shipInfo;
         const paymentInfo = payment;
         const orderDetails = { email: email, cart: savedCart, shippment:shippment, payment:paymentInfo }
-        fetch('http://localhost:4000/orderPlaced', {
+        fetch('https://shrouded-garden-81115.herokuapp.com/orderPlaced', {
             method: 'POST',
             body: JSON.stringify(orderDetails),
             headers: {

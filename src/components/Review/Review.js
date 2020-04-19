@@ -20,7 +20,7 @@ const Review = () => {
     useEffect(() => {
         const saveCart = getDatabaseCart();
         const productkeys = Object.keys(saveCart)
-        fetch('http://localhost:4000/getProductByKeys', {
+        fetch('https://shrouded-garden-81115.herokuapp.com/getProductByKeys', {
             method: 'POST',
             body: JSON.stringify(productkeys),
             headers: {
